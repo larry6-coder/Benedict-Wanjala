@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Benedict Wanjala | Teaching Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>emailjs.init("GAkR7RB5bgZh_dYjm");</script>
+
+<style>
+*, *::before, *::after {
+  margin: 0; padding: 0; box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --bg: #0B1120;
+  --surface: #131E30;
+  --card: #1A2740;
+  --border: #243352;
+  --text: #F1F5F9;
+  --muted: #94A3B8;
+  --accent: #38BDF8;
+  --accent2: #818CF8;
+  --accent-glow: rgba(56,189,248,0.18);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+/* ── NAV ── */
+.navbar {
+  position: fixed; top: 0; width: 100%; z-index: 1000;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 48px;
+  background: rgba(11,17,32,0.75);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px; font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.5px;
+}
+
+.nav-links { display: flex; align-items: center; gap: 8px; }
+
+.nav-links a {
+  color: var(--muted); text-decoration: none;
+  font-size: 14px; font-weight: 500;
+  padding: 8px 14px; border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.nav-links a:hover { color: var(--text); background: var(--card); }
+
+.nav-cta {
+  background: var(--accent) !important;
+  color: #0B1120 !important;
+  font-weight: 600 !important;
+  margin-left: 8px;
+}
+
+.nav-cta:hover { background: #7DD3FC !important; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: 100px 48px 80px;
+  max-width: 1100px;
+  margin: auto;
+  gap: 60px;
+}
+
+.hero-left { flex: 1; }
+
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 600; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--accent);
+  background: var(--accent-glow);
+  border: 1px solid rgba(56,189,248,0.25);
+  padding: 6px 14px; border-radius: 20px;
+  margin-bottom: 24px;
+}
+
+.hero-eyebrow span { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
+
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.5)} }
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px, 6vw, 64px);
+  font-weight: 700; line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.hero h1 em {
+  font-style: normal;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+.hero-role {
+  font-size: 20px; color: var(--muted); margin-bottom: 20px;
+  font-weight: 300;
+}
+
+#typed { color: var(--accent); font-weight: 500; }
+
+.hero-description {
+  font-size: 16px; color: var(--muted); line-height: 1.8;
+  max-width: 520px; margin-bottom: 36px;
+}
+
+.hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 26px; border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px; font-weight: 600;
+  text-decoration: none; cursor: pointer;
+  border: none; transition: all 0.2s;
+}
+
+.btn-primary { background: var(--accent); color: #0B1120; }
+.btn-primary:hover { background: #7DD3FC; transform: translateY(-1px); }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1.5px solid var(--border);
+}
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+
+.btn-ghost {
+  background: var(--card);
+  color: var(--text);
+}
+.btn-ghost:hover { background: var(--border); transform: translateY(-1px); }
+
+/* HERO STATS */
+.hero-stats {
+  display: flex; gap: 32px; margin-top: 44px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+
+.stat-item { }
+.stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px; font-weight: 700; color: var(--accent);
+  line-height: 1;
+}
+.stat-label { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+/* HERO RIGHT – profile */
+.hero-right { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+
+.profile-wrapper {
+  position: relative;
+  width: 240px; height: 240px;
+}
+
+.glow-ring {
+  position: absolute; top: -12px; left: -12px;
+  width: 264px; height: 264px; border-radius: 50%;
+  border: 2px solid transparent;
+  border-top: 2px solid var(--accent);
+  border-right: 2px solid rgba(56,189,248,0.3);
+  animation: spin 4s linear infinite;
+  filter: drop-shadow(0 0 8px var(--accent));
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.profile-pic {
+  width: 100%; height: 100%; border-radius: 50%;
+  object-fit: cover; position: relative; z-index: 2;
+  box-shadow: 0 0 40px var(--accent-glow);
+  animation: float 5s ease-in-out infinite;
+  transition: transform 0.3s;
+}
+.profile-pic:hover { transform: scale(1.04); }
+
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+
+.availability-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 500; color: #4ADE80;
+  background: rgba(74,222,128,0.1);
+  border: 1px solid rgba(74,222,128,0.25);
+  padding: 8px 16px; border-radius: 20px;
+}
+
+.availability-badge span { width: 7px; height: 7px; background: #4ADE80; border-radius: 50%; animation: pulse 2s infinite; }
+
+/* ── CREDENTIAL STRIP ── */
+.credential-strip {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 28px 48px;
+  display: flex; justify-content: center; gap: 0;
+  overflow-x: auto;
+}
+
+.cred-item {
+  display: flex; flex-direction: column; align-items: center;
+  padding: 0 40px; gap: 4px;
+  border-right: 1px solid var(--border);
+}
+.cred-item:last-child { border-right: none; }
+
+.cred-year { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+.cred-title { font-size: 14px; font-weight: 600; color: var(--text); }
+.cred-org { font-size: 13px; color: var(--accent); }
+
+/* ── SECTIONS ── */
+.section { padding: 80px 48px; max-width: 1100px; margin: auto; }
+.section-sm { padding: 60px 48px; max-width: 1100px; margin: auto; }
+
+.section-label {
+  font-size: 12px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--accent2);
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700; margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  font-size: 16px; color: var(--muted);
+  max-width: 580px; line-height: 1.8;
+  margin-bottom: 48px;
+}
+
+/* ── ABOUT ── */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 36px; }
+
+.about-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px; padding: 28px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.about-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+.about-card-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: var(--accent-glow); border: 1px solid rgba(56,189,248,0.2);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent); font-size: 18px; margin-bottom: 16px;
+}
+
+.about-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+.about-card p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+.philosophy-block {
+  background: linear-gradient(135deg, rgba(56,189,248,0.06), rgba(129,140,248,0.06));
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 12px; padding: 28px 32px;
+}
+
+.philosophy-block blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px; font-style: italic; color: var(--text);
+  line-height: 1.6; margin-bottom: 12px;
+}
+
+.philosophy-block cite { font-size: 13px; color: var(--muted); }
+
+.about-actions { display: flex; gap: 14px; margin-top: 36px; flex-wrap: wrap; }
+
+/* ── WORK ── */
+.work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+
+.work-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px; padding: 30px;
+  transition: border-color 0.2s, transform 0.2s;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.work-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+
+.work-card-icon {
+  width: 50px; height: 50px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+}
+
+.icon-blue { background: rgba(56,189,248,0.12); color: var(--accent); }
+.icon-indigo { background: rgba(129,140,248,0.12); color: var(--accent2); }
+.icon-green { background: rgba(74,222,128,0.12); color: #4ADE80; }
+.icon-orange { background: rgba(251,146,60,0.12); color: #FB923C; }
+.icon-pink { background: rgba(244,114,182,0.12); color: #F472B6; }
+.icon-teal { background: rgba(45,212,191,0.12); color: #2DD4BF; }
+
+.work-card h3 { font-size: 16px; font-weight: 600; }
+.work-card p { font-size: 14px; color: var(--muted); line-height: 1.7; flex: 1; }
+
+.work-card-tag {
+  display: inline-block; font-size: 11px; font-weight: 600;
+  letter-spacing: 0.5px; padding: 4px 10px; border-radius: 4px;
+  background: var(--accent-glow); color: var(--accent);
+  border: 1px solid rgba(56,189,248,0.2);
+  align-self: flex-start;
+}
+
+.work-cta { margin-top: 40px; display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* ── SKILLS ── */
+.skills-section { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+.skills-intro { max-width: 1100px; margin: auto; padding: 80px 48px 0; }
+
+.skills-grid-wrap { max-width: 1100px; margin: auto; padding: 40px 48px 80px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+
+.skill-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px; padding: 24px;
+  transition: border-color 0.2s;
+}
+.skill-card:hover { border-color: var(--accent); }
+
+.skill-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.skill-name { font-size: 15px; font-weight: 600; }
+.skill-pct { font-size: 14px; font-weight: 700; color: var(--accent); }
+
+.skill-bar { height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
+.skill-fill {
+  height: 100%; border-radius: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  width: 0%; transition: width 1.4s cubic-bezier(0.4,0,0.2,1);
+}
+
+.skill-desc { font-size: 13px; color: var(--muted); margin-top: 10px; line-height: 1.6; }
+
+/* ── TESTIMONIALS ── */
+.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
+
+.testimonial-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 14px; padding: 28px;
+  transition: border-color 0.2s;
+}
+.testimonial-card:hover { border-color: var(--accent2); }
+
+.stars { color: #FBBF24; font-size: 13px; margin-bottom: 14px; }
+
+.testimonial-card blockquote {
+  font-size: 14px; color: var(--muted);
+  line-height: 1.8; font-style: italic;
+  margin-bottom: 18px;
+}
+
+.testimonial-author { display: flex; align-items: center; gap: 12px; }
+.author-avatar {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: var(--accent-glow); border: 1.5px solid var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent); font-weight: 700; font-size: 14px;
+}
+.author-name { font-size: 14px; font-weight: 600; }
+.author-role { font-size: 12px; color: var(--muted); }
+
+/* ── CONTACT ── */
+.contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; }
+
+.contact-info { display: flex; flex-direction: column; gap: 20px; }
+
+.contact-intro { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 8px; }
+
+.contact-detail {
+  display: flex; align-items: flex-start; gap: 14px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 12px; padding: 18px;
+}
+.contact-detail-icon {
+  width: 40px; height: 40px; flex-shrink: 0;
+  border-radius: 9px; background: var(--accent-glow);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent); font-size: 16px;
+}
+.contact-detail-text strong { font-size: 13px; font-weight: 600; display: block; margin-bottom: 3px; }
+.contact-detail-text span { font-size: 13px; color: var(--muted); }
+
+.contact-social { display: flex; gap: 10px; }
+.social-btn {
+  width: 42px; height: 42px; border-radius: 9px;
+  background: var(--card); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--muted); font-size: 16px; text-decoration: none;
+  transition: all 0.2s;
+}
+.social-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
+
+/* FORM */
+.contact-form-wrap {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 16px; padding: 36px;
+}
+
+.contact-form-wrap h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px; font-weight: 600; margin-bottom: 6px;
+}
+
+.form-sub { font-size: 14px; color: var(--muted); margin-bottom: 24px; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+.field { margin-bottom: 16px; }
+.field label { font-size: 13px; font-weight: 500; color: var(--muted); display: block; margin-bottom: 6px; }
+
+.field input, .field textarea, .field select {
+  width: 100%; padding: 12px 14px;
+  background: var(--surface); color: var(--text);
+  border: 1.5px solid var(--border); border-radius: 8px;
+  font-family: 'Inter', sans-serif; font-size: 14px;
+  outline: none; transition: border-color 0.2s;
+}
+.field input:focus, .field textarea:focus, .field select:focus {
+  border-color: var(--accent);
+}
+.field textarea { resize: vertical; min-height: 110px; }
+.field select option { background: var(--surface); }
+
+.form-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
+
+#status-box {
+  display: none; padding: 12px 16px;
+  margin-top: 14px; border-radius: 8px;
+  font-size: 14px; font-weight: 500; text-align: center;
+}
+.success { background: rgba(74,222,128,0.15); color: #4ADE80; border: 1px solid rgba(74,222,128,0.25); }
+.error { background: rgba(239,68,68,0.15); color: #F87171; border: 1px solid rgba(239,68,68,0.25); }
+.loading { background: var(--accent-glow); color: var(--accent); border: 1px solid rgba(56,189,248,0.25); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 40px 48px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 20px;
+  max-width: 100%;
+}
+.footer-left p { font-size: 13px; color: var(--muted); }
+.footer-left strong { color: var(--text); font-weight: 600; }
+
+.footer-right { display: flex; gap: 10px; }
+
+/* ── SCROLLED PROFILE ── */
+#profileWrapper.scrolled {
+  position: fixed; top: 12px; left: 16px;
+  width: 42px; height: 42px; z-index: 2000;
+}
+#profileWrapper.scrolled .glow-ring { display: none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .navbar { padding: 14px 20px; }
+  .nav-links a { display: none; }
+  .nav-links .nav-cta { display: flex; }
+
+  .hero { flex-direction: column-reverse; padding: 80px 20px 60px; text-align: center; }
+  .hero-description { max-width: 100%; }
+  .hero-buttons { justify-content: center; }
+  .hero-stats { justify-content: center; }
+
+  .credential-strip { gap: 0; padding: 24px 20px; }
+  .cred-item { padding: 0 20px; }
+
+  .section, .section-sm { padding: 60px 20px; }
+  .skills-intro { padding: 60px 20px 0; }
+  .skills-grid-wrap { padding: 30px 20px 60px; }
+  footer { padding: 30px 20px; flex-direction: column; align-items: flex-start; }
+
+  .about-grid { grid-template-columns: 1fr; }
+  .work-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="navbar">
+  <div class="logo">Wanjala</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#work">Teaching Work</a>
+    <a href="#skills">Skills</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="btn nav-cta"><i class="fa-solid fa-paper-plane"></i> Hire Me</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <span></span>
+      Available for Consultation
+    </div>
+    <h1>Benedict<br><em>Wanjala</em></h1>
+    <p class="hero-role"><span id="typed"></span></p>
+    <p class="hero-description">
+      Shaping learners into leaders for over eight years. I bring structured curriculum design, evidence-based teaching methods, and genuine passion for student development into every classroom, school, and consultancy engagement.
+    </p>
+    <div class="hero-buttons">
+      <a href="#work" class="btn btn-primary"><i class="fa-solid fa-briefcase"></i> View My Work</a>
+      <a href="#contact" class="btn btn-secondary"><i class="fa-solid fa-envelope"></i> Get in Touch</a>
+      <a href="#about" class="btn btn-ghost"><i class="fa-solid fa-user"></i> About Me</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-number">8+</div>
+        <div class="stat-label">Years Teaching</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">500+</div>
+        <div class="stat-label">Students Mentored</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">12+</div>
+        <div class="stat-label">Schools Consulted</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="profile-wrapper" id="profileWrapper">
+      <div class="glow-ring"></div>
+      <img src="profilepic.jpeg" class="profile-pic" id="profilePic" alt="Benedict Wanjala" />
+    </div>
+    <div class="availability-badge">
+      <span></span> Open to New Opportunities
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIAL STRIP -->
+<div class="credential-strip">
+  <div class="cred-item">
+    <span class="cred-year">Since 2016</span>
+    <span class="cred-title">Head Teacher</span>
+    <span class="cred-org">Education Leadership</span>
+  </div>
+  <div class="cred-item">
+    <span class="cred-year">8+ Years</span>
+    <span class="cred-title">Social Studies</span>
+    <span class="cred-org">Curriculum Expert</span>
+  </div>
+  <div class="cred-item">
+    <span class="cred-year">Ongoing</span>
+    <span class="cred-title">Educational Consultant</span>
+    <span class="cred-org">Schools & NGOs</span>
+  </div>
+  <div class="cred-item">
+    <span class="cred-year">500+ Students</span>
+    <span class="cred-title">Mentor & Coach</span>
+    <span class="cred-org">Academic & Personal</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="section-label">Who I Am</div>
+  <h2 class="section-title">Educator, Mentor &<br>Curriculum Specialist</h2>
+  <p class="section-subtitle">
+    I believe every learner carries potential waiting to be unlocked. My work sits at the intersection of structured academic delivery and personal development — creating environments where students don't just pass exams, they grow into purposeful individuals.
+  </p>
+
+  <div class="about-grid">
+    <div class="about-card">
+      <div class="about-card-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+      <h3>Classroom Excellence</h3>
+      <p>Over eight years of hands-on teaching experience across diverse learning environments, delivering engaging lessons that meet curriculum standards while keeping students genuinely interested.</p>
+    </div>
+    <div class="about-card">
+      <div class="about-card-icon"><i class="fa-solid fa-book-open"></i></div>
+      <h3>Curriculum Development</h3>
+      <p>Experienced in designing structured syllabi, assessment frameworks, and learning outcomes that align with national standards while remaining flexible to local school needs.</p>
+    </div>
+    <div class="about-card">
+      <div class="about-card-icon"><i class="fa-solid fa-users"></i></div>
+      <h3>School Leadership</h3>
+      <p>As a Head Teacher, I coordinate teaching staff, guide departmental planning, manage parent relations, and ensure the school's academic vision is executed consistently.</p>
+    </div>
+    <div class="about-card">
+      <div class="about-card-icon"><i class="fa-solid fa-lightbulb"></i></div>
+      <h3>Educational Consulting</h3>
+      <p>Working with schools, NGOs, and educational institutions to audit teaching quality, improve delivery methods, and implement sustainable learning programs.</p>
+    </div>
+  </div>
+
+  <div class="philosophy-block">
+    <blockquote>"Teaching is not the filling of a vessel — it is the lighting of a fire. My mission is to ignite curiosity, build resilience, and give every learner the tools they need to shape their own future."</blockquote>
+    <cite>— Benedict Wanjala, Teaching Philosophy</cite>
+  </div>
+
+  <div class="about-actions">
+    <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-handshake"></i> Work With Me</a>
+    <a href="#skills" class="btn btn-secondary"><i class="fa-solid fa-chart-bar"></i> View My Skills</a>
+    <a href="mailto:benedictwanjala100@gmail.com" class="btn btn-ghost"><i class="fa-solid fa-envelope"></i> Send an Email</a>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="section" id="work">
+  <div class="section-label">What I Do</div>
+  <h2 class="section-title">Teaching Work &<br>Areas of Practice</h2>
+  <p class="section-subtitle">
+    From day-to-day classroom delivery to school-wide strategic planning, my work spans the full spectrum of educational practice. Here's what I bring to every engagement.
+  </p>
+
+  <div class="work-grid">
+    <div class="work-card">
+      <div class="work-card-icon icon-blue"><i class="fa-solid fa-file-lines"></i></div>
+      <div class="work-card-tag">Core Service</div>
+      <h3>Lesson Planning</h3>
+      <p>Carefully crafted lesson plans that balance curriculum objectives, diverse learning styles, and real-world relevance — ensuring no student is left behind and no class period is wasted.</p>
+    </div>
+    <div class="work-card">
+      <div class="work-card-icon icon-indigo"><i class="fa-solid fa-users-rectangle"></i></div>
+      <div class="work-card-tag">Core Service</div>
+      <h3>Classroom Management</h3>
+      <p>Building structured, respectful learning environments where every student feels safe to participate. I use proactive strategies that prevent disruption and foster self-regulation.</p>
+    </div>
+    <div class="work-card">
+      <div class="work-card-icon icon-green"><i class="fa-solid fa-person-chalkboard"></i></div>
+      <div class="work-card-tag">Core Service</div>
+      <h3>Student Mentorship</h3>
+      <p>One-on-one and group mentorship sessions addressing academic challenges, career direction, emotional wellness, and goal-setting for secondary and post-secondary learners.</p>
+    </div>
+    <div class="work-card">
+      <div class="work-card-icon icon-orange"><i class="fa-solid fa-sitemap"></i></div>
+      <div class="work-card-tag">Specialist</div>
+      <h3>Curriculum Design</h3>
+      <p>End-to-end curriculum development: scope and sequence planning, learning outcome mapping, assessment creation, and alignment with Kenya's CBC and 8-4-4 frameworks.</p>
+    </div>
+    <div class="work-card">
+      <div class="work-card-icon icon-pink"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+      <div class="work-card-tag">Consultant</div>
+      <h3>School Audits & Reviews</h3>
+      <p>Comprehensive school performance reviews — evaluating teaching quality, student outcomes, staff development gaps, and recommending targeted improvement strategies.</p>
+    </div>
+    <div class="work-card">
+      <div class="work-card-icon icon-teal"><i class="fa-solid fa-graduation-cap"></i></div>
+      <div class="work-card-tag">Leadership</div>
+      <h3>Teacher Training</h3>
+      <p>Facilitating professional development workshops for educators on modern pedagogy, inclusive teaching, formative assessment, and effective use of learning technology.</p>
+    </div>
+  </div>
+
+  <div class="work-cta">
+    <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-calendar-check"></i> Book a Consultation</a>
+    <a href="#skills" class="btn btn-secondary"><i class="fa-solid fa-chart-line"></i> See My Skills</a>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<div class="skills-section" id="skills">
+  <div class="skills-intro">
+    <div class="section-label">Expertise</div>
+    <h2 class="section-title">Core Teaching Skills</h2>
+    <p class="section-subtitle">
+      Built through years of practice, professional development, and real classroom feedback — these are the competencies I bring to every school, lesson, and learner.
+    </p>
+  </div>
+  <div class="skills-grid-wrap">
+    <div class="skill-card" data-percent="95">
+      <div class="skill-header"><span class="skill-name">Communication</span><span class="skill-pct">95%</span></div>
+      <div class="skill-bar"><div class="skill-fill"></div></div>
+      <p class="skill-desc">Clear verbal and written communication with students, parents, and colleagues across all age groups and contexts.</p>
+    </div>
+    <div class="skill-card" data-percent="90">
+      <div class="skill-header"><span class="skill-name">Lesson Delivery</span><span class="skill-pct">90%</span></div>
+      <div class="skill-bar"><div class="skill-fill"></div></div>
+      <p class="skill-desc">Structured, engaging classroom sessions that make complex topics accessible and memorable for every learner.</p>
+    </div>
+    <div class="skill-card" data-percent="88">
+      <div class="skill-header"><span class="skill-name">Student Mentorship</span><span class="skill-pct">88%</span></div>
+      <div class="skill-bar"><div class="skill-fill"></div></div>
+      <p class="skill-desc">Guiding students through academic and personal challenges with empathy, structure, and goal-oriented support.</p>
+    </div>
+    <div class="skill-card" data-percent="85">
+      <div class="skill-header"><span class="skill-name">Curriculum Design</span><span class="skill-pct">85%</span></div>
+      <div class="skill-bar"><div class="skill-fill"></div></div>
+      <p class="skill-desc">Developing learning frameworks aligned to national standards while remaining adaptive to each school's context.</p>
+    </div>
+    <div class="skill-card" data-percent="82">
+      <div class="skill-header"><span class="skill-name">Assessment & Evaluation</span><span class="skill-pct">82%</span></div>
+      <div class="skill-bar"><div class="skill-fill"></div></div>
+      <p class="skill-desc">Designing and interpreting assessments — formative and summative — to measure real learning, not just recall.</p>
+    </div>
+    <div class="skill-card" data-percent="78">
+      <div class="skill-header"><span class="skill-name">Educational Technology</span><span class="skill-pct">78%</span></div>
+      <div class="skill-bar"><div class="skill-fill"></div></div>
+      <p class="skill-desc">Integrating digital tools and platforms into teaching to support hybrid and modern learning environments.</p>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonials">
+  <div class="section-label">What People Say</div>
+  <h2 class="section-title">Student & Colleague Reviews</h2>
+  <p class="section-subtitle">Feedback from those who have worked with me directly — students, parents, and fellow educators.</p>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>"Mr. Wanjala transformed how I understood Social Studies. He made every lesson connect to real life, and his mentorship helped me gain confidence to pursue my career goals."</blockquote>
+      <div class="testimonial-author">
+        <div class="author-avatar">AK</div>
+        <div>
+          <div class="author-name">Amina Kariuki</div>
+          <div class="author-role">Former Student, Form 4</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>"As a fellow teacher, I've seen Benedict's impact firsthand. His lesson plans are thorough and his classroom presence is remarkable — students genuinely want to be in his class."</blockquote>
+      <div class="testimonial-author">
+        <div class="author-avatar">JM</div>
+        <div>
+          <div class="author-name">James Mutua</div>
+          <div class="author-role">Colleague, Head of Department</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>"The curriculum review Benedict conducted at our school was eye-opening. His recommendations were practical, and we saw measurable improvement in student performance within one term."</blockquote>
+      <div class="testimonial-author">
+        <div class="author-avatar">FN</div>
+        <div>
+          <div class="author-name">Florence Njeri</div>
+          <div class="author-role">Deputy Principal, Nairobi</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="section-label">Get In Touch</div>
+  <h2 class="section-title">Let's Start a Conversation</h2>
+  <p class="section-subtitle">Whether you're looking for a dedicated teacher, a curriculum consultant, or a mentor for your students — I'd love to hear from you.</p>
+
+  <div class="contact-grid">
+    <div class="contact-info">
+      <p class="contact-intro">
+        I'm available for teaching positions, school consultancy projects, mentorship programs, and educational workshops across Kenya and beyond.
+      </p>
+      <div class="contact-detail">
+        <div class="contact-detail-icon"><i class="fa-solid fa-envelope"></i></div>
+        <div class="contact-detail-text">
+          <strong>Email</strong>
+          <span>benedictwanjala100@gmail.com</span>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="contact-detail-text">
+          <strong>Location</strong>
+          <span>Nairobi, Kenya</span>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon"><i class="fa-solid fa-clock"></i></div>
+        <div class="contact-detail-text">
+          <strong>Response Time</strong>
+          <span>Usually within 24 hours</span>
+        </div>
+      </div>
+      <div class="contact-social">
+        <a class="social-btn" href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a class="social-btn" href="#" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a class="social-btn" href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a class="social-btn" href="#" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a class="social-btn" href="#" title="GitHub"><i class="fa-brands fa-github"></i></a>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap">
+      <h3>Send a Message</h3>
+      <p class="form-sub">Fill in the form below and I'll get back to you as soon as possible.</p>
+      <form id="contact-form">
+        <div class="form-row">
+          <div class="field">
+            <label>Your Name</label>
+            <input type="text" name="from_name" placeholder="e.g. John Kamau" required>
+          </div>
+          <div class="field">
+            <label>Your Email</label>
+            <input type="email" name="from_email" placeholder="you@example.com" required>
+          </div>
+        </div>
+        <div class="field">
+          <label>Subject</label>
+          <select name="subject">
+            <option value="">Select a topic...</option>
+            <option>Teaching Position Inquiry</option>
+            <option>Curriculum Consultation</option>
+            <option>Student Mentorship</option>
+            <option>School Audit Request</option>
+            <option>General Inquiry</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Your Message</label>
+          <textarea name="message" placeholder="Tell me about your school, students, or what you're looking for..." required></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+          <button type="reset" class="btn btn-ghost"><i class="fa-solid fa-rotate-left"></i> Clear Form</button>
+        </div>
+      </form>
+      <div id="status-box"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <p><strong>Benedict Wanjala</strong> — Educator · Mentor · Curriculum Specialist</p>
+    <p style="margin-top:4px;">© 2026 Benedict Wanjala. All rights reserved.</p>
+  </div>
+  <div class="footer-right">
+    <a class="social-btn" href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+    <a class="social-btn" href="#" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    <a class="social-btn" href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+    <a class="social-btn" href="#" title="GitHub"><i class="fa-brands fa-github"></i></a>
+  </div>
+</footer>
+
+<!-- TYPE EFFECT -->
+<script>
+const words = ["Head Teacher", "Social Studies Teacher", "Curriculum Specialist", "Student Mentor", "Educational Consultant"];
+let i=0,j=0,isDeleting=false;
+function type(){
+  const el=document.getElementById("typed");
+  const word=words[i];
+  el.textContent = word.substring(0,j);
+  if(!isDeleting){ j++; if(j>word.length){isDeleting=true;setTimeout(type,1200);return;} }
+  else { j--; if(j===0){isDeleting=false;i=(i+1)%words.length;} }
+  setTimeout(type,isDeleting?55:110);
+}
+type();
+</script>
+
+<!-- SKILLS ANIMATION -->
+<script>
+const skillCards = document.querySelectorAll(".skill-card");
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      const pct = entry.target.dataset.percent;
+      const fill = entry.target.querySelector(".skill-fill");
+      fill.style.width = pct + "%";
+      obs.unobserve(entry.target);
+    }
+  });
+}, {threshold: 0.4});
+skillCards.forEach(c => obs.observe(c));
+</script>
+
+<!-- EMAIL -->
+<script>
+const form = document.getElementById("contact-form");
+const box = document.getElementById("status-box");
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  box.style.display = "block";
+  box.className = "loading";
+  box.textContent = "Sending your message...";
+  emailjs.sendForm("service_5mr2kq9", "template_x977fh1", form)
+    .then(() => {
+      box.className = "success";
+      box.textContent = "✓ Message sent! I'll get back to you within 24 hours.";
+      form.reset();
+    })
+    .catch(() => {
+      box.className = "error";
+      box.textContent = "✕ Something went wrong. Please email me directly.";
+    });
+});
+</script>
+
+<!-- SCROLL: mini profile -->
+<script>
+const profileWrapper = document.getElementById("profileWrapper");
+window.addEventListener("scroll", () => {
+  profileWrapper.classList.toggle("scrolled", window.scrollY > 140);
+});
+</script>
+
+</body>
+</html>
